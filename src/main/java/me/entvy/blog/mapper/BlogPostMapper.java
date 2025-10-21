@@ -14,4 +14,5 @@ public interface BlogPostMapper {
     List<BlogPost> findLatest(int limit);
     List<BlogPost> findRandom(int limit);
     void insert(BlogPost post);
+    void updatePost(BlogPost blogPost);
 }

@@ -41,4 +41,15 @@ public class BlogPostService {
         post.setCreatedAt(LocalDateTime.now());
         blogPostMapper.insert(post);
     }
+
+    public boolean updatePostBySlug(String slug, BlogPost blogPost) {
+        BlogPost existing = blogPostMapper.findBySlug(slug);
+        if (existing == null) {
+            return false;
+        }
+
+        blogPost.setId(existing.getId());
+        blogPostMapper.updatePost(blogPost);
+        return true;
+    }
 }

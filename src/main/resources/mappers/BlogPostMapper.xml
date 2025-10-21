@@ -87,4 +87,17 @@
         VALUES (#{title}, #{slug}, #{author}, #{category}, #{imageUrl}, #{createdAt}, #{markdownContent})
     </insert>
 
+    <update id="updatePost" parameterType="BlogPost">
+        UPDATE blog_post
+        SET title = #{title},
+            slug = #{slug},
+            category = #{category},
+            image_url = #{imageUrl},
+            markdown_content = #{markdownContent},
+            author = #{author}
+        WHERE id = #{id}
+    </update>
+
+
+
 </mapper>

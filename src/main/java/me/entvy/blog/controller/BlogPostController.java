@@ -6,7 +6,7 @@ import me.entvy.blog.repository.BlogPostRepository;
 import me.entvy.blog.service.BlogPostService;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -117,6 +117,17 @@ public class BlogPostController {
     public ResponseEntity<Void> createPost(@RequestBody BlogPost post) {
         blogPostService.createPost(post);
         return ResponseEntity.ok().build();
+    }
+
+//  /api/posts/slug/{slug} - 포스트 수정 ( Mybatis )
+    @PutMapping("/posts/slug/{slug}")
+    public ResponseEntity<?> updatePost(@PathVariable String slug, @RequestBody BlogPost blogPost) {
+        boolean updated = blogPostService.updatePostBySlug(slug, blogPost);
+        if(updated) {
+            return ResponseEntity.ok("글이 수정되었습니다.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당 글을 찾을 수 없습니다.");
+        }
     }
 
 //  /api/images - 이미지 업로드 ( JPA )
