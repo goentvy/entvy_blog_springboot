@@ -16,7 +16,8 @@ public class WebConfig {
                         .allowedOrigins(
                                 "http://localhost:5173",
                                 "https://goentvy.github.io",
-                                "https://entvy-blog-springboot.onrender.com"
+                                "https://goentvy.github.io/blog-api-test/",
+                                "https://entvy-blog.onrender.com"
                         )
                         .allowedMethods("*");
             }
