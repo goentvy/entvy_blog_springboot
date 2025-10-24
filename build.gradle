@@ -25,17 +25,33 @@ repositories {
 }
 
 dependencies {
+    // JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // Security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
+    // MariaDB JDBC
     implementation 'org.mariadb.jdbc:mariadb-java-client'
+    // MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
+    // Swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+    // Jwt
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // JSON 직렬화용
+    // lombok
     compileOnly 'org.projectlombok:lombok'
+    // Devtools
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // Anotation
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+    // test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
