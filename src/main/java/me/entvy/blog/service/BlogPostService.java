@@ -54,6 +54,6 @@ public class BlogPostService {
     }
 
     public void deletePost(Long id) {
-        blogPostMapper.deleteById(id);
+        blogPostMapper.deletePost(id);
     }
 }

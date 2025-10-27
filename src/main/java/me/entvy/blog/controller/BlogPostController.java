@@ -139,7 +139,7 @@ public class BlogPostController {
         }
     }
 
-//  /api/posts/{id}
+//  /api/posts/{id} - 포스트 삭제 ( Mybatis )
     @Operation(summary = "포스트 삭제", description = "선택한 블로그 포스트를 삭제합니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "포스트 삭제 성공"),

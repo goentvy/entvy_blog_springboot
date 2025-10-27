@@ -99,7 +99,7 @@
     </update>
 
     <delete id="deletePost">
-        DELETE FROM posts WHERE id = #{id}
+        DELETE FROM blog_post WHERE id = #{id}
     </delete>
 
 </mapper>
