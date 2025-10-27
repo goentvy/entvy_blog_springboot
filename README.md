@@ -7,5 +7,8 @@
 ### - Spring Boot DevTools
 ### - Lombok
 ### - Spring Security
+### - MyBatis
+### - Swagger
+### - Jwt
 ### - Validation
 ### - Spring Configuration Processor
