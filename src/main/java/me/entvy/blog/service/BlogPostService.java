@@ -52,4 +52,8 @@ public class BlogPostService {
         blogPostMapper.updatePost(blogPost);
         return true;
     }
+
+    public void deletePost(Long id) {
+        blogPostMapper.deleteById(id);
+    }
 }

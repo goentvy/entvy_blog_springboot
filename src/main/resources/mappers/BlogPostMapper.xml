@@ -98,6 +98,8 @@
         WHERE id = #{id}
     </update>
 
-
+    <delete id="deletePost">
+        DELETE FROM posts WHERE id = #{id}
+    </delete>
 
 </mapper>

@@ -139,6 +139,19 @@ public class BlogPostController {
         }
     }
 
+//  /api/posts/{id}
+    @Operation(summary = "포스트 삭제", description = "선택한 블로그 포스트를 삭제합니다.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "포스트 삭제 성공"),
+            @ApiResponse(responseCode = "400", description = "잘못된 요청"),
+            @ApiResponse(responseCode = "500", description = "서버 오류")
+    })
+    @DeleteMapping("/posts/{id}")
+    public ResponseEntity<?> deletePost(@PathVariable Long id) {
+        blogPostService.deletePost(id);
+        return ResponseEntity.ok().build();
+    }
+
 //  /api/images - 이미지 업로드 ( JPA )
     @Operation(summary = "이미지 업로드", description = "새로운 이미지를 등록합니다.")
     @ApiResponses({

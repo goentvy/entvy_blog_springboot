@@ -15,4 +15,5 @@ public interface BlogPostMapper {
     List<BlogPost> findRandom(int limit);
     void insert(BlogPost post);
     void updatePost(BlogPost blogPost);
+    void deleteById(Long id);
 }
